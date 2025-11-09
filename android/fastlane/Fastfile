@@ -7,7 +7,8 @@ platform :android do
       sh "flutter build apk"
       release = firebase_app_distribution(
       app: "1:531900504127:android:987b6222a1bc6e7417808a", 
-      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN_YOUTUBE"],
+      # firebase_cli_token: ENV["FIREBASE_CLI_TOKEN_YOUTUBE"],
+      firebase_cli_token: "1//03vX-zzaq_7R3CgYIARAAGAMSNwF-L9Irgen2jry3N4L2DGor4hz_3vF3BfZ4ygCfH7tbd8obd19bgR1vkRbNE-XjvptRvaAHdrE",
       android_artifact_path:"../build/app/outputs/flutter-apk/app-release.apk",
       android_artifact_type:"APK",
       testers: "mohamednosair142@gmail.com, ahmed123@gmail.com ",
