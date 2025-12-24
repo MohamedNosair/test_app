@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:test_app/core/network/remote/dio_helper.dart';
 import 'package:test_app/features/product/view/product_view.dart';
 
-//! في المشروع دا  هطبق ال MVVM عشان افهما كويس وهحاول اطلع افضل شغل في الملف دا ان شاء الله
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DioHelper.init();
