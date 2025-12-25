@@ -1,27 +1,27 @@
-import 'dart:developer';
+import 'package:flutter/material.dart';
+import 'package:test_app/core/network/remote/dio_helper.dart';
+import 'package:test_app/feature/posts/view/product_view.dart';
 
-class AssistantCutter implements VegetableTask {
-  void prepareVegetables() => log("prepareVegetables");
+//! في المشروع دا  هطبق ال MVVM عشان افهما كويس وهحاول اطلع افضل شغل في الملف دا ان شاء الله
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
+
+  runApp(const MyApp());
 }
 
-abstract class VegetableTask {
-  void prepareVegetables();
-}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-class Chef {
-  final VegetableTask vegetableTask;
-
-  Chef({required this.vegetableTask});
-  void cut() {
-    vegetableTask.prepareVegetables();
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Clean Arch Login',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const ProductView(),
+    );
   }
-}
-
-void main() {
-  final AssistantCutter assistantCutter = AssistantCutter();
-  final Chef chef = Chef(vegetableTask: assistantCutter);
-  chef.cut();
-
-  // Chef chef = Chef();
-  // chef.cutter.prepareVegetables();
 }
