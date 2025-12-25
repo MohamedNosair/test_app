@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_app/core/error/widget/erro_widget.dart';
-import 'package:test_app/features/product/model_view/products_cubit.dart';
-import 'package:test_app/features/product/repo/product_repo.dart';
+import 'package:test_app/features/product/presentation/logic/products_cubit.dart';
+import 'package:test_app/features/product/domain/product_use_case/get_product_use_case.dart';
+import 'package:test_app/features/product/data/repo_impl/product_repo_impl.dart';
 
 
 class ProductView extends StatelessWidget {
@@ -13,7 +14,7 @@ class ProductView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('المنتجات'), centerTitle: true),
       body: BlocProvider(
-        create: (context) => ProductsCubit(ProductRepo())..fetchProducts(),
+        create: (context) => ProductsCubit(GetProductUseCase(repo: ProductRepoImpl()))..fetchProducts(),
         child: BlocBuilder<ProductsCubit, ProductsState>(
           builder: (context, state) {
             if (state is ProductsLoading) {
@@ -29,9 +30,9 @@ class ProductView extends StatelessWidget {
               final products = state.products;
 
               return ListView.builder(
-                itemCount: products.products.length,
+                itemCount: products.productsEntity.length,
                 itemBuilder: (context, index) {
-                  final product = products.products[index];
+                  final product = products.productsEntity[index];
                   return Card(
                     margin: const EdgeInsets.symmetric(
                       horizontal: 16,

@@ -1,24 +1,18 @@
-class Product {
-  final int id;
-  final String name;
-  final String description;
-  final num price;
-  final String ?imageUrl;
-  final String location;
-  final int stars;
+import 'package:test_app/features/product/domain/entity/product_entity.dart';
 
-  Product({
-    required this.stars,
-    required this.location,
-    required this.id,
-    required this.name,
-    required this.description,
-    required this.price,
-    required this.imageUrl,
+class ProductModel extends ProductEntity {
+  ProductModel({
+    required super.stars,
+    required super.location,
+    required super.id,
+    required super.name,
+    required super.description,
+    required super.price,
+    required super.imageUrl,
   });
 
-  factory Product.fromJson(Map<String, dynamic> json) {
-    return Product(
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
+    return ProductModel(
       stars: json['stars'],
       location: json['location'],
       id: json['id'],

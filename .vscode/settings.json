@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/Users/DELL/projects/test_app/linux"
+    "cmake.sourceDirectory": "C:/Users/DELL/projects/test_app/linux",
+    "cmake.ignoreCMakeListsMissing": true
 }
