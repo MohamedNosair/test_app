@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/core/errors/failure.dart';
+import 'package:test_app/core/error/failure.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   final Failure failure;

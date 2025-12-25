@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_app/core/errors/widget/error_widget.dart';
-import 'package:test_app/feature/posts/model_view/products_cubit.dart';
-import 'package:test_app/feature/posts/repo/product_repo.dart';
+import 'package:test_app/core/error/widget/erro_widget.dart';
+import 'package:test_app/features/product/model_view/products_cubit.dart';
+import 'package:test_app/features/product/repo/product_repo.dart';
+
 
 class ProductView extends StatelessWidget {
   const ProductView({super.key});

@@ -1,4 +1,4 @@
-import 'package:test_app/feature/posts/model/product_model.dart';
+import 'package:test_app/features/product/model/product_model.dart';
 
 class AllProductModel {
   final int totalSize;

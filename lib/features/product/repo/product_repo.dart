@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:test_app/core/errors/error_handler.dart';
-import 'package:test_app/core/errors/failure.dart';
+import 'package:test_app/core/error/error_handler.dart';
+import 'package:test_app/core/error/failure.dart';
 import 'package:test_app/core/network/end_point.dart';
 import 'package:test_app/core/network/remote/dio_helper.dart';
-import 'package:test_app/feature/posts/model/all_product_model.dart';
+import 'package:test_app/features/product/model/all_product_model.dart';
 
 class ProductRepo {
   Future<Either<Failure, AllProductModel>> getProducts() async {
